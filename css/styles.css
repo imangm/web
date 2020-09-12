@@ -1,0 +1,8 @@
+:root {
+	--bg-color: #eee;
+}
+
+body {
+	background-color: var(--bg-color);
+	font-family: "Roboto";
+}
