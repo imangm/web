@@ -1,17 +1,28 @@
-function circle(radius) {
-	this.radius = radius;
-
-	this.name = function (fn) {
-		return this.radius * fn;
+/** Stop Watch Exercise */
+function Stopwatch() {
+	let started = false;
+	let duration = 0;
+	let timeStarted,
+		timeStopped = 0;
+	this.start = function () {
+		if (started) throw new Error("It's already started");
+		// start counting
+		timeStarted = new Date();
+		started = true;
 	};
-
-	this.draw = function () {
-		console.log("circle is drew!");
-		console.log(`It's as big as ${this.name(4)}`);
+	this.stop = function () {
+		if (!started) throw new Error("It's not started right now!");
+		timeStopped = new Date();
+		duration = duration + (timeStopped - timeStarted) / 1000;
+		started = false;
 	};
+	this.reset = function () {
+		duration = 0;
+		started = false;
+	};
+	Object.defineProperty(this, "duration", {
+		get: function () {
+			return duration;
+		},
+	});
 }
-
-const myCircle = new circle(10);
-console.log(myCircle.radius);
-myCircle.draw();
-console.log(myCircle.name(3));
