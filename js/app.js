@@ -1,3 +1,13 @@
+class Animal {
+	constructor(name) {
+		this._name = name;
+	}
+
+	get name() {
+		return this._name;
+	}
+}
+
 const cl = (m) => console.log(m);
 
 let arr = [0, 4, 1, 5, 7, 3];
