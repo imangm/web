@@ -8,6 +8,12 @@ class Animal {
 	}
 }
 
+class Dog extends Animal {
+	constructor(name) {
+		super(name);
+	}
+}
+
 const cl = (m) => console.log(m);
 
 let arr = [0, 4, 1, 5, 7, 3];
