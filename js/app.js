@@ -79,4 +79,10 @@ function findSmallestNum(arr) {
 	return Math.min(...arr);
 }
 
+let Menu = {};
+Menu.special = "Have you ever tried English foods?";
+cl(Menu.special);
+
+module.exports = Menu;
+
 cl(findSmallestNum(numArr));
