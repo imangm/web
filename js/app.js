@@ -214,5 +214,36 @@ function reverse(str) {
 }
 // cl(reverse("Edabit is really helpful!"));
 
-function repetition(txt, n) {}
-repetition("cherry", 2);
+function repetition(txt, n) {
+	if (n > 1) {
+		return txt + repetition(txt, n - 1);
+	} else {
+		return txt;
+	}
+}
+// cl(repetition("cherry", 5));
+
+function getOnlyEvens(nums) {
+	return nums.filter((x, i) => (i % 2 === 0) & (x % 2 === 0));
+}
+//cl(getOnlyEvens([1, 3, 2, 6, 4, 8]));
+
+const inventory = {
+	sunglasses: 1900,
+	pants: 1088,
+	bags: 1344,
+};
+
+const myExecutor = (resolve, reject) => {
+	if (inventory.sunglasses > 0) {
+		resolve("Sunglasses order processed.");
+	} else {
+		reject("That item is sold out.");
+	}
+};
+
+const orderSunglasses = () => new Promise(myExecutor);
+
+let orderPromise = orderSunglasses();
+
+console.log(orderPromise);
