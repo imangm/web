@@ -229,7 +229,7 @@ function getOnlyEvens(nums) {
 //cl(getOnlyEvens([1, 3, 2, 6, 4, 8]));
 
 const inventory = {
-	sunglasses: 1900,
+	sunglasses: 1,
 	pants: 1088,
 	bags: 1344,
 };
