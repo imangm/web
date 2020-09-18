@@ -228,22 +228,42 @@ function getOnlyEvens(nums) {
 }
 //cl(getOnlyEvens([1, 3, 2, 6, 4, 8]));
 
-const inventory = {
-	sunglasses: 1,
-	pants: 1088,
-	bags: 1344,
-};
+// const inventory = {
+// 	sunglasses: 1,
+// 	pants: 1088,
+// 	bags: 1344,
+// };
 
-const myExecutor = (resolve, reject) => {
-	if (inventory.sunglasses > 0) {
-		resolve("Sunglasses order processed.");
-	} else {
-		reject("That item is sold out.");
-	}
-};
+// const myExecutor = (resolve, reject) => {
+// 	if (inventory.sunglasses > 0) {
+// 		resolve("Sunglasses order processed.");
+// 	} else {
+// 		reject("That item is sold out.");
+// 	}
+// };
 
-const orderSunglasses = () => new Promise(myExecutor);
+// const orderSunglasses = () => new Promise(myExecutor);
 
-let orderPromise = orderSunglasses();
+// orderSunglasses().then(cl).then(cl);
 
-console.log(orderPromise);
+const dbHandler = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		if (1 === 1) {
+			resolve(new Date());
+		} else {
+			reject("it's false!");
+		}
+	}, 1500);
+});
+
+//dbHandler();
+// dbHandler
+// 	.then((x) => console.log(`The DB Handler answered at ${x}`))
+// 	.catch((x) => console.log(x));
+
+async function dbExec() {
+	let x = await dbHandler;
+	console.log(`what an ${x}`);
+}
+
+dbExec();
